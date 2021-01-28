@@ -26,9 +26,10 @@
 
        <div class="lista-stampata">
         <ul>
-         <li v-for="(element,index) in arraylist">{{element}}<button  @click="deleteElement(elementi)">remove</button></li>
+         <li v-for="(element,index) in arraylist">{{element}}<i class="fas fa-times" @click="deleteElement(index)"></i></li>
        </ul>
        </div>
+    
 
 
 

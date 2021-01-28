@@ -1,1 +1,7 @@
 
+.lista-stampata>ul>li{
+ list-style: none;
+}
+img{
+  height: 50px;
+}

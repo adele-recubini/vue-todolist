@@ -5,6 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title></title>
   </head>
@@ -12,24 +13,31 @@
 
     <div id="root">
 
+    <img class="image" src="img/logo.png" alt="">
+
+    <div class="container-first">
       <!-- creo l input -->
       <!-- nell input inserisco un v-model  -->
-
-
       <input v-model="elementi" v-on:keyup.enter="addElement" placeholder="aggiungi elementi alla lista"></input>
       <!-- creo il button in cui richiamre la funzione aggiumta elementi  -->
       <button @click="addElement">click</button>
       <!-- stampo nell html gli elementi che ad ogni click si aggiungeranno nell arraylist   -->
-      <ul>
-      <li v-for="element in arraylist">{{element}}</li>
-     </ul>
+      </div>
+
+     <div class="lista-stampata">
+        <ul>
+       <li v-for="element in arraylist">{{element}}</li>
+      
+       </ul>
+       <div v-for="(element, index) in arraylist">
+        <button  @click="deleteElement(elementi)">remove</button>
+       </div>
+      </div>
 
      <!-- al click della x rimuovi elemento  -->
-
-      <div v-for="(element, index) in arraylist">
-
-     <button  @click="deleteElement(elementi)">remove</button>
-    </div>
+      <!-- <div v-for="(element, index) in arraylist">
+       <button  @click="deleteElement(elementi)">remove</button>
+      </div> -->
 
 
 

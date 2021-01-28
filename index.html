@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
     <title></title>
   </head>
   <body>
@@ -13,18 +14,21 @@
 
       <!-- creo l input -->
       <!-- nell input inserisco un v-model  -->
-      <input v-model="elementi"placeholder="aggiungi elementi alla lista"></input>
-      <!-- creo il button in cui richiamre la funzione  -->
-      <button on-click="addElement">click</button>
-      <i class="fas fa-times"></i>
 
 
+      <input v-model="elementi" v-on:keyup.enter="addElement" placeholder="aggiungi elementi alla lista"></input>
+      <!-- creo il button in cui richiamre la funzione aggiumta elementi  -->
+      <button @click="addElement">click</button>
+
+     <!-- al click della x rimuovi elemento  -->
+      <button @click="deleteElement(elementi)">remove</button>
 
 
 
       <!-- stampo nell html gli elementi che ad ogni click si aggiungeranno nell arraylist   -->
-      <span v-for="element in arraylist">{{element}}</span>
-
+      <ul>
+      <li v-for="element in arraylist">{{element}}</li>
+     </ul>
 
     </div>
     <script src="js/main.js" charset="utf-8"></script>

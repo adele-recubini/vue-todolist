@@ -12,15 +12,18 @@
   <body>
 
     <div id="root">
+      <div class="container">
+
+
 
     <img class="image" src="img/logo.png" alt="">
 
     <div class="container-first">
       <!-- creo l input -->
       <!-- nell input inserisco un v-model  -->
-      <input v-model="elementi" v-on:keyup.enter="addElement" placeholder="aggiungi elementi alla lista"></input>
+      <input class="input-box" v-model="elementi" v-on:keyup.enter="addElement" placeholder="aggiungi elementi alla lista"></input>
       <!-- creo il button in cui richiamre la funzione aggiumta elementi  -->
-      <button @click="addElement">click</button>
+      <button  class="button-add" @click="addElement">Aggiungi</button>
       <!-- stampo nell html gli elementi che ad ogni click si aggiungeranno nell arraylist   -->
       </div>
 
@@ -29,7 +32,7 @@
          <li v-for="(element,index) in arraylist">{{element}}<i class="fas fa-times" @click="deleteElement(index)"></i></li>
        </ul>
        </div>
-    
+
 
 
 
@@ -45,7 +48,7 @@
 
 
 
-
+    </div>
     </div>
     <script src="js/main.js" charset="utf-8"></script>
   </body>

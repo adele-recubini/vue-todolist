@@ -24,15 +24,18 @@
       <!-- stampo nell html gli elementi che ad ogni click si aggiungeranno nell arraylist   -->
       </div>
 
-     <div class="lista-stampata">
+       <div class="lista-stampata">
         <ul>
-         <li v-for="element in arraylist">{{element}}</li>
-
+         <li v-for="(element,index) in arraylist">{{element}}<button  @click="deleteElement(elementi)">remove</button></li>
        </ul>
-       <div v-for="(element, index) in arraylist">
+       </div>
+
+
+
+       <!-- <div v-for="(element, index) in arraylist">
         <button  @click="deleteElement(elementi)">remove</button>
        </div>
-      </div>
+      </div> -->
 
      <!-- al click della x rimuovi elemento  -->
       <!-- <div v-for="(element, index) in arraylist">
